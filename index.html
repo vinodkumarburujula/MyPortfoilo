@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinod Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --accent-color: #2a5298;
+      --header-bg: linear-gradient(to right, #1e3c72, #2a5298);
+      --card-bg: white;
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #f0f0f0;
+      --accent-color: #ffcc00;
+      --header-bg: linear-gradient(to right, #000428, #004e92);
+      --card-bg: #2b2b2b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  background-image: url('images/backgroundimage.png'); /* Your image path here */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+    header {
+      background: var(--header-bg);
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    .dark-toggle {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+
+    #about {
+  background-image: url('images/bg\ new.avif');
+  background-size: cover;
+  background-position: center;
+}
+#education {
+  background-image: url('images/bg\ new.avif');
+  background-size: cover;
+  background-position: center;
+}
+#projects {
+  background-image: url('images/bg\ new.avif');
+  background-size: cover;
+  background-position: center;
+}
+#skills {
+  background-image: url('images/bg\ new.avif');
+  background-size: cover;
+  background-position: center;
+  font-weight: 100px;
+}
+#certificates {
+  background-image: url('images/bg\ new.avif');
+  background-size: cover;
+  background-position: center;
+}
+#contact {
+  background-image: url('images/bg\ new.avif');
+  background-size: cover;
+  background-position: center;
+}
+#feedback {
+  background-image: url('images/bg\ new.avif');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.profile-pic {
+      width: 150px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20%;
+      margin-bottom: 2rem;
+      border: 4px solid var(--accent-color);
+  /* existing styles... */
+      display: block;
+      margin: 0 auto 1rem auto; /* centers horizontally */
+}
+
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .project {
+      background-color: #4c8b86;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .project img {
+      width: 10%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .filter-buttons {
+      margin-bottom: 1rem;
+    }
+
+    .filter-buttons button {
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    form button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #1e3c72;
+    }
+
+    .contact-info p {
+      margin: 0.5rem 0;
+    }
+
+    .contact-info a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1e3c72;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VINOD KUMAR BURUJULA</h1>
+    <div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      
+  </header>
+
+  <section id="about" data-aos="fade-up">
+    <h2 style="display: flex; justify-content: center;">About Me</h2>
+    <img src="images/proile img.jpeg" alt="Profile Picture" class="profile-pic">
+    <h2 style="display: flex; justify-content: center;">VINOD KUMAR BURUJULA</h2>
+    <p><b>Hi, Welcome to my portfoilo This is Vinod Kumar Burujula.
+      I am purusing MCA (Master of Computer Applications) in Rajeev Gandhi Memorial College of Engineering and technology and I completed Graduted from Rayalaseema University Kurnool with 73% percentage in B.com (Computers Applications) . i learned some technologines in Nxtwave CCBP like hmtl, css, javascript,React js, python, sql, and DJango . out of these Technologies  iam strong in python, sql, and  django. i did some  projects using these technolgies like Todo Application, Weather Report and static and Dynamic websites.</p>
+    </b>
+  </section>
+  <section id="education" data-aos="fade-up">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Master Of Computer Apllications</strong> – Rajeev Gandhi Memorial College of Engineering and technology (2024–2026) - (Purusing).</li>
+      <li><strong>Bachelor of Commerce (Computer Applications)</strong> – Rayalaseema University (2020–2023) With 73%.</li>
+      <li><strong>Intermediate Education</strong> – SLNS & SSS Junior College (2018–2020) with 77%.</li>
+      <li><strong>Secondary School Certificate</strong> – Friends vidya nikethan High School (2017–2018) with 85%.</li>
+    </ul>
+  </section>
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="project" data-category="web" data-aos="fade-right">
+      <img src="images/todos image.jpeg" alt="Weather App">
+      <h3>Todo Applications</h3>
+      <p> A task management app built with HTML, CSS, and JavaScript. </p>
+    </div>
+    <div class="project" data-category="web" data-aos="fade-left">
+      <img src="images/weatherimage.png" alt="To-Do List">
+      <h3>Weather App</h3>
+      <p>A web app that shows real-time weather data using the OpenWeatherMap API.</p>
+    </div>
+    <div class="project" data-category="games" data-aos="fade-right">
+      <img src="images/toursim image.jpg" alt="Space Shooter Game">
+      <h3>Toursim Website</h3>
+      <p>A Website Showing a Images and Description Of Famous Citys</p>
+    </div>
+  </section>
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <ul>
+      <li data-aos="fade-right">HTML5, CSS3, JavaScript</li>
+      <li data-aos="fade-left">Python, DJango</li>
+      <li data-aos="fade-right">Basic knowledge on React js</li>
+      <li data-aos="fade-left">Git & GitHub, ms excel</li>
+    </ul>
+  </section>
+  <section id="certificates" data-aos="fade-up">
+    <h2>Certificates</h2>
+    <ul>
+      <li><strong><a href="https://certificates.ccbp.in/intensive/programming-foundations?id=NMHFOWKYXX">Foundations With Python</a> </strong> – CCBP 4.O INTENSIVE, 2023</li>
+      <li><strong><a href="https://certificates.ccbp.in/intensive/introduction-to-databases?id=HCTJKYXLYL">Introduction To Database</a></strong> – CCBP 4.O INTENSIVE, 2023</li>
+      <li><strong><a href="https://certificates.ccbp.in/intensive/developer-foundations?id=PZZMTXIXXC">Developer Foundations</a></strong> – CCBP 4.O INTENSIVE, 2023</li>
+    </ul>
+  </section>
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p><strong>Phone:</strong> 8919434873</p>
+      <p><strong>Email:</strong> <a href="burujulavinodkumar@gmail.com " target="_blank">burujulavinodkumar@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vinod-kumar-burujula-a854a4250/" target="_blank">https://www.linkedin.com/in/vinod-kumar-burujula</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/vinodkumarburujula/" target="_blank">https://github.com/vinodkumarburujula</a></p>
+    </div>
+  </section>
+  <section id="feedback" data-aos="fade-up">
+    <h2>Feedback</h2>
+    <form action="https://formspree.io/f/xjkylywp" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Feedback" required></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+  <footer>
+    <p>&copy; 2025 Vinod kumar. All rights reserved.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function filterProjects(category) {
+      const projects = document.querySelectorAll('.project');
+      projects.forEach(project => {
+        if (category === 'all' || project.dataset.category === category) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
